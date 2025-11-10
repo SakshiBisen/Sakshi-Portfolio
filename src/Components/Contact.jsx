@@ -1,81 +1,92 @@
-import { Instagram, Linkedin, Mail, PhoneCall, Send, Twitter } from "lucide-react"
-import {cn} from "@/lib/utils"
+import { motion as Motion } from "framer-motion";
+import { Mail, PhoneCall, Github, Linkedin, Twitter } from "lucide-react";
+
 export const Contact = () => {
-    return <section id="contact" className="py-24 px-4 relative">
-        <div className="container mx-auto max-w-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-secondary">
-                Get In <span className="text-primary">Touch</span>
-            </h2>
-            <p className="text-center text-secondary mb-12 max-w-2xl mx-auto">
-                Have a project or want to collaborate ? I'm always open to discussing new opportunities
+  return (
+    <section id="contact" className="py-24 px-4 relative overflow-hidden">
+      <div className="container mx-auto max-w-6xl text-center">
+        {/* Heading */}
+        <Motion.h2
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl font-bold mb-4 text-secondary dark:text-white"
+        >
+          🌐 Get In <span className="text-primary">Touch</span>
+        </Motion.h2>
+
+        {/* Subtitle */}
+        <Motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="text-muted-foreground mb-12 max-w-2xl mx-auto dark:text-gray-300"
+        >
+          Have a project or want to collaborate? I'm always open to new opportunities and creative ideas.
+        </Motion.p>
+
+        {/* Contact Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 place-items-center">
+          
+          {/* Email */}
+        <Motion.a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=sakshibisen108@gmail.com&su=Let's%20Connect&body=Hi%20Sakshi,%20I%20would%20like%20to%20discuss%20a%20project%20with%20you."
+  target="_blank"
+  rel="noopener noreferrer"
+  initial={{ opacity: 0, scale: 0.8 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.6 }}
+  whileHover={{ scale: 1.05 }}
+  className="flex flex-col items-center justify-center bg-card p-6 rounded-xl shadow-lg hover:shadow-pink-500/40 transition-all border border-pink-400/20"
+>
+  {/* Mail Icon */}
+  <Mail className="h-10 w-10 text-pink-500 mb-3 animate-bounce" />
+
+  {/* Title + Email */}
+  <h4 className="font-semibold text-secondary dark:text-white">Email</h4>
+  <p className="text-sm text-muted-foreground dark:text-gray-300">
+    sakshibisen108@gmail.com
+  </p>
+</Motion.a>
+
+          <Motion.a href="https://x.com/SakshiBise56146" target="_blank" initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.3 }} whileHover={{ scale: 1.05 }} className="flex flex-col items-center justify-center bg-card p-6 rounded-xl shadow-lg hover:shadow-sky-400/40 transition-all border border-sky-400/20" > <Twitter className="h-10 w-10 text-sky-400 mb-3 animate-bounce" /> <h4 className="font-semibold text-secondary dark:text-white">Twitter</h4> <p className="text-sm text-muted-foreground dark:text-gray-300">Follow my updates 🪄</p> </Motion.a>
+
+          {/* GitHub */}
+          <Motion.a
+            href="https://github.com/SakshiBisen"
+            target="_blank"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            whileHover={{ scale: 1.05 }}
+            className="flex flex-col items-center justify-center bg-card p-6 rounded-xl shadow-lg hover:shadow-gray-500/40 transition-all border border-gray-400/20"
+          >
+            <Github className="h-10 w-10 text-gray-400 mb-3 animate-bounce" />
+            <h4 className="font-semibold text-secondary dark:text-white">GitHub</h4>
+            <p className="text-sm text-muted-foreground dark:text-gray-300">
+              View my work 🧑‍💻
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="space-y-8">
-                    <h3 className="text-2xl font-semibold mb-6">Contact</h3>
+          </Motion.a>
 
-                    <div className="space-y-6 items-center justify-center">
-                        <div className="flex items-start space-x-4">
-                            <div className="p-3 rounded-full bg-primary/20">
-                                <Mail className="h-6 w-6 text-primary" />
-                            </div>
-                            <div>
-                                <h4 className="font-medium">Email</h4>
-                                <a href="mailto:test@gmail.com" className="text-secondary hover:text-primary transition-colors">test@gmail.com</a>
-                            </div>
+          {/* LinkedIn */}
+          <Motion.a
+            href="https://linkedin.com"
+            target="_blank"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            whileHover={{ scale: 1.05 }}
+            className="flex flex-col items-center justify-center bg-card p-6 rounded-xl shadow-lg hover:shadow-blue-500/40 transition-all border border-blue-400/20"
+          >
+            <Linkedin className="h-10 w-10 text-blue-500 mb-3 animate-bounce" />
+            <h4 className="font-semibold text-secondary dark:text-white">LinkedIn</h4>
+            <p className="text-sm text-muted-foreground dark:text-gray-300">
+              Let’s connect 🤝
+            </p>
+          </Motion.a>
 
-                        </div>
-                    </div>
-                    <div className="space-y-6 items-center justify-center">
-                        <div className="flex items-start space-x-4">
-                            <div className="p-3 rounded-full bg-primary/20">
-                                <PhoneCall className="h-6 w-6 text-primary" />
-                            </div>
-                            <div>
-                                <h4 className="font-medium">Phone Number</h4>
-                                <a href="tel:+1234567890" className="text-secondary hover:text-primary transition-colors">+1(123) - 456 -7890</a>
-                            </div>
-
-                        </div>
-                    </div>
-                      <div className="pt-8 text-white">
-                        <h4 className="font-semibold mb-4">Contact with Me</h4>
-                        <div className="flex space-x-4 justify-center">
-                            <a  href="#" target="_blank"> 
-                                <Linkedin/>
-                            </a>
-                            <a href="#" target="_blank">
-                                <Twitter/>
-                            </a>
-                            <a href="#" target="_blank">
-                                <Instagram/>
-                            </a>
-                        </div>
-                        </div>      
-
-                </div>
-                <div className="bg-card p-8 rounded-lg shadow-xs text-white">
-                    <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
-                    <form action="" className="space-y-6">
-                        <div>
-                            <label htmlFor="name" className="block text-m font-medium mb-2">Your Name</label>
-                            <input type="text" name="name" id="name" className="w-full px-4 py-3 rounded-md border border-input bg-background focuse:outline-hidden 
-                            focuse:ring-2 focus:ring-primary" required placeholder="OLa ....." />
-                        </div>
-                        <div>
-                            <label htmlFor="email" className="block text-m font-medium mb-2">Your Email</label>
-                            <input type="text" name="email" id="email" className="w-full px-4 py-3 rounded-md border border-input bg-background focuse:outline-hidden 
-                            focuse:ring-2 focus:ring-primary" required placeholder="Test@example.com ....." />
-                        </div>
-                        <div>
-                            <label htmlFor="message" className="block text-m font-medium mb-2">Your Message</label>
-                            <textarea type="text" name="message" id="message" className="w-full px-4 py-3 rounded-md border border-input bg-background focuse:outline-hidden 
-                            focuse:ring-2 focus:ring-primary resize-none" required placeholder="your message ....." />
-                        </div>
-                        <button  type="submit" className="px-6 py-2 rounded-full bg-primary text-primary-foreground 
-                            font-medium transition-all duration-300 hover:shaow-[0_0_10px_rgba(139,93,246,0.5)] hover:scale-10s active:scale-95"><Send size={16}/></button>
-                    </form>
-                </div>
-            </div>
         </div>
+      </div>
     </section>
-}
+  );
+};

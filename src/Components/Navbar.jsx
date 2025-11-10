@@ -1,99 +1,114 @@
-import { useEffect, useState } from "react"
-import { cn } from "../lib/utils"
+import { useEffect, useState } from "react";
+import { cn } from "../lib/utils";
 import { Menu, X } from "lucide-react";
+import { motion as Motion, AnimatePresence } from "framer-motion";
 
 export const Navbar = () => {
-    const [Scrolling, setScrolling] = useState(false);
-    const [isOpenMenu, setIsOpenMenu] = useState(false);
-    const navItem = [
-        { name: "Home", href: "#home" },
-        { name: "About", href: "#about" },
-        { name: "Projects", href: "#projects" },
-        { name: "Skills", href: "#skills" },
-        { name: "Contact", href: "#contact" },
-    ]
-    useEffect(() => {
-        const handleScroll = () => {
+  const [scrolling, setScrolling] = useState(false);
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
 
-            setScrolling(window.screenY > 10);
-        }
+  const navItem = [
+    { name: "Home", href: "/" },
+      { name: "About", href: "#about" },
+      { name: "Journey", href: "#journey" },
+      { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Certificates", href: "#certificates" },
+    { name: "Contact", href: "#contact" },
+  ];
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [])
-    return (
-        <nav className={cn("fixed w-full z-40 transition-all duration-300",
-            Scrolling ? "py-3 bg-background/80 backdrop=blur-md shadow-xs" : "py-5"
-        )}>
+  // 🟢 Detect Scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolling(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-            <div className="container flex item-center justify-between">
-                <a className="text-xl font-bold  flex item-center" href="#home">
-                    <span className="relative z-10">
-                        <span className="text-glow text-primary"> Personal </span> <span className="text-secondary">
-                            Portifolio
-                            </span> 
-                    </span>
-                </a>
+  return (
+    <Motion.nav
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={cn(
+        "fixed w-full z-40 transition-all duration-300",
+        scrolling
+          ? "py-3 bg-background/80 backdrop-blur-md shadow-md"
+          : "py-5"
+      )}
+    >
+      <div className="container flex items-center justify-between">
+        {/* 🔹 Logo */}
+        <Motion.a
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="text-xl font-bold flex items-center cursor-pointer"
+          href="#home"
+        >
+          <span className="relative z-10">
+            <span className="text-glow text-primary">Sakshi</span>{" "}
+            <span className="text-secondary">Bisen</span>
+          </span>
+        </Motion.a>
 
-                {/* large screen Navbar */}
-                <div className="hidden md:flex space-x-8">
-                    {navItem.map((item, key) => (
-                        <a key={key} href={item.href} className="hover:text-primary text-secondary transition-colors duration-300">{item.name}</a>
-                    ))}
-                </div>
-                {/* small screen Navbar */}
+        {/* 🔹 Desktop Navbar */}
+        <div className="hidden md:flex space-x-8">
+          {navItem.map((item, key) => (
+            <Motion.a
+              key={key}
+              href={item.href}
+              whileHover={{ y: -2, scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+              className="hover:text-primary text-secondary transition-colors duration-300 relative group"
+            >
+              {item.name}
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full" />
+            </Motion.a>
+          ))}
+        </div>
 
-                <button onClick={()=>setIsOpenMenu((prev)=> !prev)}
-                   className="md:hidden p-2 z-50 text-foreground" 
-                    aria-label={isOpenMenu ?"Colse Menu" :"Open Menu"}
-                    >{isOpenMenu ? <X size={24} />: <Menu size={24} />}</button>
-                <div className={cn("fixed inset-0 bg-background/95 background-blur-md z-40 flex flex-col items-center justify-center", "transition-all duration-300 md:hidden",
-                    isOpenMenu ?"opacity-100 pointer-event-auto":"opacity-0 pointer-event-auto"
-                )}>
-                  <div className="flex flex-col space-y-8 text-xl">
-                    {navItem.map((item, key) => (
-                        <a key={key} href={item.href} className="hover:text-primary transition-colors duration-300"
-                        onClick={()=>setIsOpenMenu(false)}
-                        >{item.name}</a>
-                    ))}
-                </div>
-                </div>
-            </div>
-        </nav>
-    )
-}
+        {/* 🔹 Mobile Menu Button */}
+        <Motion.button
+          whileTap={{ scale: 0.9 }}
+          onClick={() => setIsOpenMenu((prev) => !prev)}
+          className="md:hidden p-2 z-50 rounded-md hover:bg-background/50 transition-colors duration-300" 
+          aria-label={isOpenMenu ? "Close Menu" : "Open Menu"}
+        >
+          {isOpenMenu ? <X size={24} color="white" /> : <Menu color="white" size={24} />}
+        </Motion.button>
 
-
-                       
-                        // <div className="group perspective w-full h-48">
-                        //     <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
-                            
-                        //         <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl flex flex-col justify-center items-center px-4 backface-hidden">
-                        //             <Bug className="h-8 w-8 mb-2" />
-                        //             <h4 className="text-lg font-bold">Debug & Fix</h4>
-                        //         </div>
-                             
-                        //         <div className="absolute inset-0 bg-white text-green-600 rounded-xl p-4 flex flex-col justify-center items-center  backface-hidden shadow-lg">
-                        //             <p className="text-center text-sm">
-                        //                 I troubleshoot and fix UI/UX bugs and performance issues.
-                        //             </p>
-                        //         </div>
-                        //     </div>
-                        // </div>
-
-                      
-                        // <div className="group perspective w-full h-48">
-                        //     <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
-                             
-                        //         <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl flex flex-col justify-center items-center px-4 backface-hidden">
-                        //             <Palette className="h-8 w-8 mb-2" />
-                        //             <h4 className="text-lg font-bold">UI Design</h4>
-                        //         </div>
-                                
-                        //         <div className="absolute inset-0 bg-white text-pink-600 rounded-xl p-4 flex flex-col justify-center items-center rotate-y-180 backface-hidden shadow-lg">
-                        //             <p className="text-center text-sm">
-                        //                 I design clean and user-friendly interfaces using Figma and Tailwind.
-                        //             </p>
-                        //         </div>
-                        //     </div>
-                        // </div>
+        {/* 🔹 Mobile Menu Overlay */}
+        <AnimatePresence>
+          {isOpenMenu && (
+            <Motion.div
+              key="mobile-menu"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className={cn(
+                "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col  text-white items-center justify-center text-center space-y-8 text-xl md:hidden"
+              )}
+            >
+              {navItem.map((item, key) => (
+                <Motion.a
+                  key={key}
+                  href={item.href}
+                  onClick={() => setIsOpenMenu(false)}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                  className="hover:text-primary transition-colors duration-300"
+                >
+                  {item.name}
+                </Motion.a>
+              ))}
+            </Motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </Motion.nav>
+  );
+};

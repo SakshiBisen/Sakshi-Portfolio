@@ -7,6 +7,8 @@ import { Skills } from "@/Components/Skills"
 import { Project } from "@/Components/Project"
 import { Contact } from "@/Components/Contact"
 import { Footer } from "../Components/footer"
+import { Journey } from "../Components/Journey"
+import CertificateSection from "../Components/Certificate"
 
 export const Home = () => {
     return (
@@ -21,9 +23,12 @@ export const Home = () => {
             <main>
                 <MainSection />
                 <AboutSection />
+                   <Journey />
                 <Skills />
                 <Project />
-                <Contact/>
+              <CertificateSection/>
+                <Contact />
+             
             </main>
 
             {/* Footer */}

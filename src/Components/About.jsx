@@ -1,70 +1,148 @@
-import { Bug, Code, Palette } from "lucide-react"
+
+"use client";
+import React, { useEffect, useRef } from "react";
+import { motion as Motion } from "framer-motion";
+import gsap from "gsap";
+import { Code, Bug, Palette } from "lucide-react";
 
 export const AboutSection = () => {
-    return (
-        <section id="about" className="py-24 px-4 relative">
-            <div className="container mx-auto mx-w-5xl">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-secondary">
-                    About <span className="text-primary"> Me</span>
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-secondary">
-                    <div className="space-y-6">
-                        <h3 className="text-2xl font-semibold">Web developer & technology </h3>
-                        <p className="text-muted-foreground ">
-                            I am Developer and I have experiences 4 years  I create website
-                            moderen I build interface that are both beautiful and functional .
-                        </p>
-                        <p className="text-muted-foreground ">
-                            With 4 years of hands-on experience, I’ve built and maintained a wide range of websites and web apps — from landing pages to full SaaS platforms. I pay close attention to detail, focus on accessibility, and continuously learn new tools and trends to stay ahead in the fast-moving world of web development.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-                            <a href="#contact" className="px-6 py-2 rounded-full bg-primary text-primary-foreground 
-                            font-medium transition-all duration-300 hover:shaow-[0_0_10px_rgba(139,93,246,0.5)] hover:scale-10s active:scale-95">Get In Contact Me</a>
-                            <a href="" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">Download CV</a>
-                        </div>
-                    </div>
+  const imgRef = useRef(null);
 
-        
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div className="group prespective w-full h-48">
-                            <div className="relative w-full h-full transition-transform duration-700
-                            transform-style-preserve-3d">
-                                <div className="absolute inset-0 bg-gradient-to-r from-blue-500
-                                to-indigo-600 text-white rounded-xl flex flex-col justify-center
-                                item-enter px-4 backface-hidden">
+  // 🔹 GSAP Floating Image Animation
+  useEffect(() => {
+    gsap.to(imgRef.current, {
+      y: -15,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1.inOut",
+      duration: 2.5,
+    });
+  }, []);
 
-                                <Code  className="h-8 w-8 mb-2"/>
-                                <h4 className="text-lg font-bold"> web Development</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="group prespective w-full h-48">
-                            <div className="relative w-full h-full transition-transform duration-700
-                            transform-style-preserve-3d">
-                                <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl flex flex-col justify-center
-                                item-enter px-4 backface-hidden">
+  return (
+    <section
+      id="about"
+      className="py-24 px-6 overflow-hidden relative "
+    >
+      <div className="container mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        {/* LEFT SIDE — Animated Text Section */}
+        <Motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="space-y-6"
+        >
+          <Motion.h2
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-4xl md:text-5xl font-bold text-primary"
+          >
+            👩‍💻 About Me
+          </Motion.h2>
 
-                                <Bug  className="h-8 w-8 mb-2"/>
-                                <h4 className="text-lg font-bold">Solve Bug</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="group prespective w-full h-48">
-                            <div className="relative w-full h-full transition-transform duration-700
-                            transform-style-preserve-3d">
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500
-                                to-pink-500 text-white rounded-xl flex flex-col justify-center
-                                item-enter px-4 backface-hidden">
+        <Motion.p
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+  className="text-gray-600 dark:text-gray-300 leading-relaxed"
+>
+  I'm <span className="text-primary font-semibold">Sakshi Bisen</span>, a dedicated{" "}
+  <span className="text-secondary font-medium">Frontend Developer</span> with over{" "}
+  <span className="font-medium">2 years of experience</span> in building clean, modern web interfaces.  
+  Currently sharpening my skills in{" "}
+  <span className="font-medium">DSA, Aptitude, and Full Stack Development</span> to grow as a complete engineer.  
+  I believe in continuous learning, creativity, and writing code that inspires both logic and design.
+</Motion.p>
 
-                                <Palette  className="h-8 w-8 mb-2"/>
-                                <h4 className="text-lg font-bold">UI Design</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                </div>
-            </div>
-        </section>
-    )
-}
+          {/* CONNECT BUTTON */}
+          <Motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
+            className="pt-4"
+          >
+            <Motion.a
+              whileHover={{ scale: 1.08, boxShadow: "0 0 25px rgba(139,93,246,0.6)" }}
+              whileTap={{ scale: 0.95 }}
+              href="#contact"
+              className="inline-block px-8 py-3 rounded-full bg-primary text-white font-medium shadow-lg 
+                         hover:shadow-[0_0_25px_rgba(139,93,246,0.5)] transition-all duration-300"
+            >
+              ✨ Connect With Me
+            </Motion.a>
+          </Motion.div>
+
+          {/* ICON GRID — Animated */}
+         <Motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+  className="grid grid-cols-3 gap-4 pt-8"
+>
+  {[
+    {
+      icon: Code,
+      title: "Full Stack",
+      color: "from-blue-500 to-indigo-600",
+    },
+    {
+      icon: Bug,
+      title: "Problem Solving",
+      color: "from-green-500 to-emerald-600",
+    },
+    {
+      icon: Palette,
+      title: "UI / UX Design",
+      color: "from-purple-500 to-pink-500",
+    },
+  ].map(({ icon, title, color }, idx) => (   
+    <Motion.div
+      key={idx}
+      whileHover={{ scale: 1.1, rotate: 2 }}
+      className={`bg-gradient-to-r ${color} text-white p-5 rounded-xl shadow-lg flex flex-col justify-center items-center transition-transform duration-500`}
+    >
+      {React.createElement(icon, { size: 24, className: "mb-2" })}  
+      <h4 className="font-semibold text-lg">{title}</h4>
+    </Motion.div>
+  ))}
+</Motion.div>
+
+        </Motion.div>
+
+        {/* RIGHT SIDE — Floating Animated Image */}
+        <Motion.div
+          ref={imgRef}
+          initial={{ opacity: 0, x: 100, rotateY: 45 }}
+          whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="flex justify-center relative"
+        >
+          <Motion.div
+            animate={{ rotateY: [0, 10, 0, -10, 0] }}
+            transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+            className="bg-gradient-to-b mr-60 from-primary/40 to-transparent p-1 rounded-2xl shadow-[0_0_40px_rgba(139,93,246,0.3)]"
+          >
+           <div >
+      
+  <img
+    src="https://img.freepik.com/premium-vector/education-concept-illustrations-set-people-vector-illustrations_497046-2608.jpg"
+    alt="Sakshi Bisen"
+    className="
+      w-150 h-64 mr-60 
+      md:w-80 md:h-80 
+      lg:w-full lg:h-100
+    
+    "
+  />
+</div>
+
+          </Motion.div>
+        </Motion.div>
+      </div>
+    </section>
+  );
+};
