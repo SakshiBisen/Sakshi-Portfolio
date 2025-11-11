@@ -25,13 +25,13 @@ export default function CertificateSection() {
   ];
 
   return (
-    <section className="min-h-screen text-white py-16 px-6">
+    <section className="min-h-screen  font-bold py-16 px-6">
       {/* Heading */}
       <Motion.h2
-        initial={{ opacity: 0, y: -30 }}
+        initial={{ opacity: 0, y: -30 }} 
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-4xl font-bold mb-10 text-center text-secondary dark:text-white"
+        className="text-4xl font-bold mb-10 text-center text-secondary "
       >
         🎓 My <span className="text-primary">Certificates</span>
       </Motion.h2>

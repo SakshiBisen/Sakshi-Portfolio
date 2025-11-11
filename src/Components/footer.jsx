@@ -14,7 +14,7 @@ export const Footer = () => {
       <div className="relative z-10 flex flex-col items-center justify-center text-center space-y-6">
         {/* Text */}
         <Motion.p
-          className="text-sm text-muted-foreground dark:text-gray-300"
+          className="text-sm text-muted-foreground text-secondary "
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}

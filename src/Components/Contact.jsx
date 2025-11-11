@@ -10,7 +10,7 @@ export const Contact = () => {
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl font-bold mb-4 text-secondary dark:text-white"
+          className="text-4xl font-bold mb-4 text-secondary"
         >
           🌐 Get In <span className="text-primary">Touch</span>
         </Motion.h2>
@@ -20,7 +20,7 @@ export const Contact = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-muted-foreground mb-12 max-w-2xl mx-auto dark:text-gray-300"
+          className="text-muted-foreground mb-12 max-w-2xl mx-auto  text-secondary"
         >
           Have a project or want to collaborate? I'm always open to new opportunities and creative ideas.
         </Motion.p>
@@ -43,13 +43,15 @@ export const Contact = () => {
   <Mail className="h-10 w-10 text-pink-500 mb-3 animate-bounce" />
 
   {/* Title + Email */}
-  <h4 className="font-semibold text-secondary dark:text-white">Email</h4>
-  <p className="text-sm text-muted-foreground dark:text-gray-300">
+  <h4 className="font-semibold text-secondary">Email</h4>
+  <p className="text-sm text-secondary text-muted-foreground ">
     sakshibisen108@gmail.com
   </p>
 </Motion.a>
 
-          <Motion.a href="https://x.com/SakshiBise56146" target="_blank" initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.3 }} whileHover={{ scale: 1.05 }} className="flex flex-col items-center justify-center bg-card p-6 rounded-xl shadow-lg hover:shadow-sky-400/40 transition-all border border-sky-400/20" > <Twitter className="h-10 w-10 text-sky-400 mb-3 animate-bounce" /> <h4 className="font-semibold text-secondary dark:text-white">Twitter</h4> <p className="text-sm text-muted-foreground dark:text-gray-300">Follow my updates 🪄</p> </Motion.a>
+          <Motion.a href="https://x.com/SakshiBise56146" target="_blank" initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.3 }} whileHover={{ scale: 1.05 }} className="flex flex-col items-center justify-center bg-card p-6 rounded-xl shadow-lg hover:shadow-sky-400/40 transition-all border text-secondary   border-sky-400/20" >
+            <Twitter className="h-10 w-10 text-sky-400 mb-3 animate-bounce" /> <h4 className="font-semibold text-secondar">Twitter</h4>
+            <p className="text-sm text-muted-foreground text-secondary ">Follow my updates 🪄</p> </Motion.a>
 
           {/* GitHub */}
           <Motion.a
@@ -62,8 +64,8 @@ export const Contact = () => {
             className="flex flex-col items-center justify-center bg-card p-6 rounded-xl shadow-lg hover:shadow-gray-500/40 transition-all border border-gray-400/20"
           >
             <Github className="h-10 w-10 text-gray-400 mb-3 animate-bounce" />
-            <h4 className="font-semibold text-secondary dark:text-white">GitHub</h4>
-            <p className="text-sm text-muted-foreground dark:text-gray-300">
+            <h4 className="font-semibold text-secondary ">GitHub</h4>
+            <p className="text-sm text-muted-foreground text-secondary ">
               View my work 🧑‍💻
             </p>
           </Motion.a>
@@ -78,9 +80,9 @@ export const Contact = () => {
             whileHover={{ scale: 1.05 }}
             className="flex flex-col items-center justify-center bg-card p-6 rounded-xl shadow-lg hover:shadow-blue-500/40 transition-all border border-blue-400/20"
           >
-            <Linkedin className="h-10 w-10 text-blue-500 mb-3 animate-bounce" />
-            <h4 className="font-semibold text-secondary dark:text-white">LinkedIn</h4>
-            <p className="text-sm text-muted-foreground dark:text-gray-300">
+            <Linkedin className="h-10 w-10 text-secondary  mb-3 animate-bounce" />
+            <h4 className="font-semibold text-secondary ">LinkedIn</h4>
+            <p className="text-sm text-muted-foreground text-secondary ">
               Let’s connect 🤝
             </p>
           </Motion.a>

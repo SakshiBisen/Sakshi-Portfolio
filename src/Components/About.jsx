@@ -49,11 +49,11 @@ export const AboutSection = () => {
   className="text-gray-600 dark:text-gray-300 leading-relaxed"
 >
   I'm <span className="text-primary font-semibold">Sakshi Bisen</span>, a dedicated{" "}
-  <span className="text-secondary font-medium">Frontend Developer</span> with over{" "}
-  <span className="font-medium">2 years of experience</span> in building clean, modern web interfaces.  
+  <span className="font-blod text-secondary font-blod">Frontend Developer with over{" "}
+ 2 years of experiencein building clean, modern web interfaces.  
   Currently sharpening my skills in{" "}
-  <span className="font-medium">DSA, Aptitude, and Full Stack Development</span> to grow as a complete engineer.  
-  I believe in continuous learning, creativity, and writing code that inspires both logic and design.
+  DSA, Aptitude, and Full Stack Developmentto grow as a complete engineer.  
+  I believe in continuous learning, creativity, and writing code that inspires both logic and design.</span>
 </Motion.p>
 
 

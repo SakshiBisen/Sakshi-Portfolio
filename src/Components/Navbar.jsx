@@ -64,7 +64,7 @@ export const Navbar = () => {
               className="hover:text-primary text-secondary transition-colors duration-300 relative group"
             >
               {item.name}
-              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full" />
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-primary transition-all  mr-10 duration-300 group-hover:w-full" />
             </Motion.a>
           ))}
         </div>
@@ -73,10 +73,10 @@ export const Navbar = () => {
         <Motion.button
           whileTap={{ scale: 0.9 }}
           onClick={() => setIsOpenMenu((prev) => !prev)}
-          className="md:hidden p-2 z-50 rounded-md hover:bg-background/50 transition-colors duration-300" 
+          className="md:hidden p-2 mr-10 z-50 rounded-md hover:bg-background/50 text-secondary  transition-colors duration-300" 
           aria-label={isOpenMenu ? "Close Menu" : "Open Menu"}
         >
-          {isOpenMenu ? <X size={24} color="white" /> : <Menu color="white" size={24} />}
+          {isOpenMenu ? <X size={24}  /> : <Menu  size={24} />}
         </Motion.button>
 
         {/* 🔹 Mobile Menu Overlay */}
@@ -89,7 +89,7 @@ export const Navbar = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className={cn(
-                "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col  text-white items-center justify-center text-center space-y-8 text-xl md:hidden"
+                "fixed inset-0 bg-background/95   z-40 flex flex-col  text-white items-center justify-center text-center space-y-8 text-xl md:hidden"
               )}
             >
               {navItem.map((item, key) => (
@@ -100,7 +100,7 @@ export const Navbar = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ duration: 0.2 }}
-                  className="hover:text-primary transition-colors duration-300"
+                  className="hover:text-primary  text-secondary  transition-colors duration-300"
                 >
                   {item.name}
                 </Motion.a>

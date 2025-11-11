@@ -23,7 +23,7 @@ export const Journey = () => {
         "Started B.Tech in Artificial Intelligence & Machine Learning, explored coding and data structures before shifting academic focus.",
     },
     {
-      icon: <Briefcase className="text-primary h-6 w-6" />,
+      icon: <Briefcase className="text-secondary h-6 w-6" />,
       title: "Frontend Developer",
       place: "NEXG Pvt. Ltd.",
       duration: "Jan 2023 - Jan 2025",
@@ -60,7 +60,7 @@ export const Journey = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold mb-4 text-white text-center"
+          className="text-4xl md:text-5xl font-bold mb-4 text-secondary text-center"
         >
           🚀 My <span className="text-primary">Journey</span>
         </Motion.h2>
@@ -70,7 +70,7 @@ export const Journey = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
           viewport={{ once: true }}
-          className="text-center text-slate-300 mb-16 max-w-2xl mx-auto"
+          className="text-center   fond-blod mb-16 max-w-2xl mx-auto text-secondary"
         >
           A timeline of my education, work experience, and professional growth ✨
         </Motion.p>
@@ -110,15 +110,15 @@ export const Journey = () => {
                       <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/20 border border-primary/40">
                         {item.icon}
                       </div>
-                      <h3 className="text-xl font-semibold text-primary">
+                      <h3 className="text-xl font-semibold text-secondary">
                         {item.title}
                       </h3>
                     </div>
-                    <p className="text-sm text-slate-400 font-medium mb-1">
+                    <p className="text-sm  font-medium mb-1 text-secondary">
                       {item.place}
                     </p>
                     <p className="text-sm text-secondary mb-2">{item.duration}</p>
-                    <p className="text-slate-300 text-sm leading-relaxed">
+                    <p className=" text-sm  text-secondary leading-relaxed">
                       {item.description}
                     </p>
                   </div>
