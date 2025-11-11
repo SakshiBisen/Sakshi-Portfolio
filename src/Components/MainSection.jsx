@@ -19,7 +19,7 @@ export const MainSection = () => {
         {/* ============ Centered Animated Image ============ */}
       <div
       className="relative flex justify-center items-center mx-auto
-        w-80 h-80
+        w-70 h-70
         sm:w-50 sm:h-50
         md:w-80 md:h-80
         lg:w-70 lg:h-70
