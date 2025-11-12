@@ -92,7 +92,7 @@ export const MainSection = () => {
           <Motion.a
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            href="#cv"
+           href="/Sakshi-BisenCv.pdf"
             className="px-6 py-2 rounded-full border border-primary text-primary font-medium hover:bg-primary hover:text-white transition-all duration-300"
           >
             Show CV
@@ -101,7 +101,7 @@ export const MainSection = () => {
           <Motion.a
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            href="/cv.pdf"
+            href="/Sakshi-BisenCv.pdf"
             download
             className="px-6 py-2 rounded-full border border-primary text-primary font-medium hover:bg-primary hover:text-white transition-all duration-300"
           >
