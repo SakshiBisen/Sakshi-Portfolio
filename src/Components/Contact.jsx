@@ -72,7 +72,7 @@ export const Contact = () => {
 
           {/* LinkedIn */}
           <Motion.a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/sakshi-bisen-48a731307/"
             target="_blank"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
