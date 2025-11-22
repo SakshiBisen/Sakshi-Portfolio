@@ -19,8 +19,8 @@ export const MainSection = () => {
           {/* ============ Centered Animated Image ============ */}
           <div className="relative flex justify-center items-center mx-auto"
             style={{
-              width: 'clamp(300px, 33vw, 200px)',
-              height: 'clamp(300px, 33vw, 200px)'
+              width: 'clamp(200px, 18vw, 200px)',
+              height: 'clamp(200px, 18vw, 200px)'
             }}
           >
             {/* Profile Image */}
