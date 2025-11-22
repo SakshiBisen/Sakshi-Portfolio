@@ -25,7 +25,7 @@ export const MainSection = () => {
           >
             {/* Profile Image */}
             <img
-              src="/profile.png"
+              src="/profile.jpeg"
               alt="Profile"
               loading="lazy"
               className="w-full h-full rounded-full object-cover border-4 border-primary/50 shadow-lg z-10"
