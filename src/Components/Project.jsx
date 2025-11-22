@@ -8,7 +8,7 @@ const projects = [
     title: "AI Chatbot (Full Stack)",
     description:
       "An AI-powered chatbot like Gemini, built with backend integration for real-time responses and smooth conversation flow.",
-    image: "public/projects/project01.png",
+  image: "/projects/project01.png",
     url: "https://ai-chatbot-theta-sable.vercel.app/",
     tags: ["React", "Node.js", "Tailwind", "OpenAI API"],
   },
@@ -17,7 +17,7 @@ const projects = [
     title: "Productivity Dashboard",
     description:
       "An advanced productivity dashboard to manage daily tasks, performance tracking, and progress insights — fully responsive UI.",
-    image: "public/projects/project02.png",
+  image: "/projects/project02.png",
     url: "https://productivity-dashboard-liart.vercel.app/",
     tags: ["HTML", "CSS", "JavaScript"],
   },
@@ -26,7 +26,7 @@ const projects = [
     title: "E-Commerce Interface",
     description:
       "A dynamic shopping experience with animations, product filters, wishlist, and responsive design — inspired by modern UI trends.",
-    image: "public/projects/project03.png",
+  image: "/projects/project03.png",
     url: "https://hackathon-project-one-two.vercel.app/",
     tags: ["React", "Tailwind", "Framer Motion"],
   },
@@ -35,7 +35,7 @@ const projects = [
     title: "Animated Quiz App",
     description:
       "An interactive React-based quiz app with score tracking, animations, and modern UI transitions.",
-    image: "public/projects/project04.png",
+  image: "/projects/project04.png",
     url: "https://quiz-question-by-react.vercel.app/",
     tags: ["React", "JavaScript", "Animation"],
   },

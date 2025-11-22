@@ -16,45 +16,29 @@ export const MainSection = () => {
         transition={{ duration: 1, ease: "easeOut" }}
         className="container max-w-4xl mx-auto text-center space-y-8"
       >
-        {/* ============ Centered Animated Image ============ */}
-      <div
-      className="relative flex justify-center items-center mx-auto
-        w-75 h-75
-        sm:w-50 sm:h-50
-        md:w-70 md:h-70
-        lg:w-70 lg:h-70
-        xl:w-45 xl:h-45
-        2xl:w-50 2xl:h-50 mt-15"
-          
-    >
-      {/* Profile Image */}
-      <img
-        src="/profile.png"
-        alt="Profile"
-        className="
-          w-full h-full
-          rounded-full
-          object-cover
-          border-4 border-primary/50
-          shadow-lg
-          z-10
-        "
-      />
+          {/* ============ Centered Animated Image ============ */}
+          <div className="relative flex justify-center items-center mx-auto"
+            style={{
+              width: 'clamp(300px, 33vw, 200px)',
+              height: 'clamp(300px, 33vw, 200px)'
+            }}
+          >
+            {/* Profile Image */}
+            <img
+              src="/profile.png"
+              alt="Profile"
+              loading="lazy"
+              className="w-full h-full rounded-full object-cover border-4 border-primary/50 shadow-lg z-10"
+            />
 
-      {/* Rotating Dashed Circle */}
-      <Motion.div
-        className="
-          absolute inset-0
-          rounded-full
-          border-2 border-dashed
-          border-black dark:border-white
-          z-0
-        "
-        initial={{ rotateZ: 0 }}
-        animate={{ rotateZ: 360 }}
-        transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-      />
-    </div>
+            {/* Rotating Dashed Circle (background) */}
+            <Motion.div
+              className="absolute inset-0 rounded-full border-2 border-dashed border-primary/20 dark:border-primary/50 pointer-events-none z-0"
+              initial={{ rotateZ: 0 }}
+              animate={{ rotateZ: 360 }}
+              transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+            />
+          </div>
 
         {/* ============ Animated Text ============ */}
         <Motion.h1
