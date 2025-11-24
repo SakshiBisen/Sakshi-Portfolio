@@ -25,7 +25,7 @@ export default function CertificateSection() {
   ];
 
   return (
-    <section className="min-h-screen  font-bold py-16 px-6">
+    <section id="certificates" className="min-h-screen  font-bold py-16 px-6">
       {/* Heading */}
       <Motion.h2
         initial={{ opacity: 0, y: -30 }} 

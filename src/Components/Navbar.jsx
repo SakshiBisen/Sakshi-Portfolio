@@ -9,9 +9,9 @@ export const Navbar = () => {
 
   const navItem = [
     { name: "Home", href: "/" },
-      { name: "About", href: "#about" },
-      { name: "Journey", href: "#journey" },
-      { name: "Skills", href: "#skills" },
+    { name: "About", href: "#about" },
+    { name: "Journey", href: "#journey" },
+    { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Certificates", href: "#certificates" },
     { name: "Contact", href: "#contact" },
