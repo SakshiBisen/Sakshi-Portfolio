@@ -110,7 +110,7 @@ export const Project = () => {
                     href={project.url}
                     className="text-primary flex items-center gap-2 font-medium hover:underline"
                   >
-                    Visit <ExternalLink size={16} />
+                    Visit  Demo<ExternalLink size={16} />
                   </a>
                 </div>
               </div>
